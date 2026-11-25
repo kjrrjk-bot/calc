@@ -1,0 +1,1120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Senior Health &amp; Blood Sugar Calculator: A1C, BMI, Water &amp; Protein</title>
+<meta name="description" content="Free, no-sign-in calculator for adults over 50: check fasting and 2-hour blood sugar, estimate your A1C, and get your BMI with daily water and protein targets. Large print, plain English.">
+<link rel="canonical" href="https://calc.seoulhangang.com/">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="theme-color" content="#0f3b66">
+<meta name="author" content="Daily Longevity Tools">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Daily Longevity Tools">
+<meta property="og:title" content="Senior Health &amp; Blood Sugar Calculator (A1C, BMI, Water &amp; Protein)">
+<meta property="og:description" content="Two quick checks for adults over 50: where your blood sugar falls, your estimated A1C, and your BMI with a daily water and protein guide. Plain English, large type, nothing sent anywhere.">
+<meta property="og:url" content="https://calc.seoulhangang.com/">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Senior Health &amp; Blood Sugar Calculator">
+<meta name="twitter:description" content="Check fasting and 2-hour blood sugar, estimate A1C, and get senior BMI, water and protein targets — free, no sign-in.">
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5856913807825928" crossorigin="anonymous"></script>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"Senior Health & Blood Sugar Calculator","url":"https://calc.seoulhangang.com/","applicationCategory":"HealthApplication","operatingSystem":"Any","browserRequirements":"Requires JavaScript","inLanguage":"en-US","description":"A free calculator for adults over 50 that classifies fasting and 2-hour post-meal blood sugar, estimates A1C, and reports BMI with daily water and protein targets.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"Daily Longevity Tools","url":"https://en.seoulhangang.com/"}}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"What is a normal blood sugar level for a 65-year-old?","acceptedAnswer":{"@type":"Answer","text":"For screening, the cut-offs are the same at 65 as at 45: a fasting blood sugar under 100 mg/dL (5.6 mmol/L) and a reading under 140 mg/dL (7.8 mmol/L) two hours after a meal are normal. A fasting reading of 100 to 125 mg/dL or a 2-hour reading of 140 to 199 mg/dL is the prediabetes range. If you already have diabetes, your doctor may set a higher target than these numbers on purpose, because very low readings are more dangerous after 65 than slightly high ones."}},
+{"@type":"Question","name":"Can this calculator diagnose diabetes?","acceptedAnswer":{"@type":"Answer","text":"No. It sorts the numbers you type into the standard screening ranges and gives you a rough A1C estimate. Diabetes is diagnosed by a doctor using a lab A1C, a fasting plasma glucose test, or an oral glucose tolerance test, usually repeated on a second day. Use this page to know what to ask, not to replace the test."}},
+{"@type":"Question","name":"What BMI should a senior have?","acceptedAnswer":{"@type":"Answer","text":"Between 50 and 64, the usual healthy range is a BMI of 18.5 to 24.9. From 65 on, a BMI of about 23 to 27 is often considered the most comfortable range, because being somewhat heavier protects against frailty and bone loss while very low weight raises the risk of falls and infection. Muscle mass matters as much as the number: BMI cannot tell muscle from fat, so also check your waist and your strength."}},
+{"@type":"Question","name":"How much water should an older adult drink each day?","acceptedAnswer":{"@type":"Answer","text":"Most healthy older adults need roughly 1.5 to 2 liters of fluid a day, about 6 to 8 cups, and part of that comes from food. Thirst gets weaker with age, so it is a poor reminder. Pale straw-colored urine is a practical sign of enough fluid. If you have heart failure or kidney disease or take a diuretic, ask your doctor before increasing how much you drink."}},
+{"@type":"Question","name":"Why is my morning blood sugar higher than my bedtime reading?","acceptedAnswer":{"@type":"Answer","text":"Between about 3 and 8 a.m. the liver releases stored glucose to fuel your brain, and cortisol rises to help you wake. That is called the dawn phenomenon and it is normal, so a fasting reading can be higher than the number you saw before bed even though you ate nothing. A late, heavy, or high-carb dinner, poor sleep, and some medications add to it."}}
+]}
+</script>
+
+<style>
+:root{
+  --ink:#101f33;
+  --muted:#3d5273;
+  --navy:#0f3b66;
+  --navy-dark:#08223c;
+  --teal:#0a6653;
+  --teal-soft:#e4f3ee;
+  --amber:#8a4a00;
+  --amber-soft:#fdf1dc;
+  --red:#9f2019;
+  --red-soft:#fbe9e7;
+  --blue-soft:#e9f0fa;
+  --line:#c6d2e2;
+  --bg:#f3f6fa;
+  --radius:14px;
+  --shadow:0 1px 2px rgba(16,31,51,.06),0 6px 18px rgba(16,31,51,.05);
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html{font-size:18px;-webkit-text-size-adjust:100%}
+body{
+  margin:0;background:var(--bg);color:var(--ink);
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif;
+  font-size:1.05rem;line-height:1.65;
+}
+img{max-width:100%}
+a{color:#0a4d8c}
+a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible{
+  outline:3px solid #1f6fd0;outline-offset:3px;border-radius:6px;
+}
+.wrap{max-width:900px;margin:0 auto;padding:0 18px}
+.skip{position:absolute;left:-9999px;top:0;background:#fff;color:var(--navy);padding:12px 18px;z-index:20;font-weight:700}
+.skip:focus{left:12px;top:12px}
+
+/* header */
+.site-head{background:linear-gradient(160deg,#0f3b66 0%,#0a2c4d 100%);color:#fff;padding:22px 0 46px}
+.brand{display:flex;align-items:center;gap:10px;font-size:.82rem;letter-spacing:.14em;text-transform:uppercase;color:#cfe0f5;font-weight:700;margin:0 0 14px}
+.brand .dot{width:10px;height:10px;border-radius:50%;background:#6fd3b6;display:inline-block}
+h1{font-size:clamp(1.75rem,5.4vw,2.6rem);line-height:1.18;margin:0 0 14px;letter-spacing:-.01em}
+.sub{font-size:1.06rem;color:#dce8f6;margin:0;max-width:38em}
+
+/* tabs */
+.tabs{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:-30px 0 22px}
+.tab{
+  appearance:none;border:2px solid var(--line);background:#fff;color:var(--navy);
+  font:inherit;font-weight:800;font-size:1.02rem;line-height:1.25;
+  padding:16px 12px;min-height:72px;border-radius:12px;cursor:pointer;box-shadow:var(--shadow);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;text-align:center;
+}
+.tab small{display:block;font-weight:600;font-size:.78rem;color:var(--muted);letter-spacing:0}
+.tab[aria-selected="true"]{background:var(--navy);border-color:var(--navy);color:#fff}
+.tab[aria-selected="true"] small{color:#cfe0f5}
+.tab:hover{border-color:#8ba3c2}
+
+/* cards */
+.card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow);margin:0 0 20px}
+h2{font-size:1.42rem;line-height:1.3;margin:0 0 8px}
+h3{font-size:1.14rem;margin:26px 0 10px}
+.panel-lede{color:var(--muted);margin:0 0 18px}
+
+/* segmented controls */
+.seg-group{display:inline-flex;border:2px solid var(--line);border-radius:10px;overflow:hidden;margin:0 0 20px;background:#fff}
+.seg{appearance:none;border:0;background:#fff;color:var(--navy);font:inherit;font-weight:700;font-size:1rem;padding:12px 20px;min-height:52px;cursor:pointer}
+.seg+.seg{border-left:2px solid var(--line)}
+.seg[aria-pressed="true"]{background:var(--navy);color:#fff}
+.seg:hover:not([aria-pressed="true"]){background:var(--blue-soft)}
+.group-label{display:block;font-weight:700;font-size:.95rem;color:var(--muted);margin:0 0 8px}
+
+/* fields */
+.field{margin:0 0 20px}
+.field>label,.field>legend{display:block;font-weight:800;font-size:1.1rem;margin:0 0 8px;padding:0}
+.field .hint{font-weight:500;font-size:.92rem;color:var(--muted);display:block;margin-top:4px;line-height:1.45}
+.input-row{display:flex;align-items:center;gap:10px}
+.input-row input{
+  flex:1 1 auto;min-width:0;width:100%;
+  font:inherit;font-size:1.55rem;font-weight:700;color:var(--ink);
+  padding:12px 14px;border:2px solid #94a7c0;border-radius:10px;background:#fff;
+}
+.input-row input::placeholder{color:#7c8ba1;font-weight:500}
+.input-row input:focus{border-color:#1f6fd0;outline:none;box-shadow:0 0 0 4px rgba(31,111,208,.18)}
+.unit-label{font-size:1rem;font-weight:700;color:var(--muted);min-width:64px;white-space:nowrap}
+.split{display:flex;gap:10px;align-items:center}
+.split input{max-width:130px}
+.split .unit-label{min-width:auto}
+.help{font-size:.92rem;color:var(--muted);margin:8px 0 0}
+fieldset.field{border:0;padding:0;margin:0 0 20px}
+
+/* buttons */
+.btn{appearance:none;border:0;border-radius:12px;font:inherit;font-weight:800;cursor:pointer}
+.btn-primary{display:block;width:100%;background:var(--navy);color:#fff;font-size:1.24rem;padding:17px 20px;min-height:62px;margin:6px 0 0;box-shadow:0 3px 0 #072441}
+.btn-primary:hover{background:#0c3157}
+.btn-primary:active{transform:translateY(2px);box-shadow:0 1px 0 #072441}
+.btn-ghost{background:#fff;color:var(--navy);border:2px solid var(--line);font-size:1rem;padding:10px 18px;min-height:48px}
+.btn-ghost:hover{background:var(--blue-soft)}
+.privacy-note{font-size:.88rem;color:var(--muted);margin:12px 0 0}
+
+/* results */
+.results{margin:24px 0 0}
+.result-card{border:2px solid var(--line);border-radius:var(--radius);padding:20px;background:#fff}
+.result-card.tone-ok{border-color:#7cc4ae;background:linear-gradient(180deg,#f2fbf7,#fff 55%)}
+.result-card.tone-warn{border-color:#e0aa5c;background:linear-gradient(180deg,#fef7ec,#fff 55%)}
+.result-card.tone-high{border-color:#e0908a;background:linear-gradient(180deg,#fdf0ef,#fff 55%)}
+.badge{display:inline-block;padding:7px 15px;border-radius:999px;font-weight:800;font-size:1rem;letter-spacing:.01em}
+.tone-ok .badge{background:var(--teal);color:#fff}
+.tone-warn .badge{background:#8a4a00;color:#fff}
+.tone-high .badge{background:var(--red);color:#fff}
+.result-lead{font-size:1.08rem;margin:14px 0 6px;font-weight:600}
+.metrics{list-style:none;margin:16px 0 0;padding:0}
+.metrics li{display:flex;flex-wrap:wrap;gap:4px 14px;justify-content:space-between;align-items:baseline;padding:13px 0;border-top:1px solid #e2e8f1}
+.metrics .k{font-weight:700}
+.metrics .v{font-size:1.2rem;font-weight:800;text-align:right}
+.metrics .tag{font-size:.95rem;font-weight:700;padding:2px 10px;border-radius:999px;display:inline-block;white-space:nowrap}
+.metrics .note-line{flex-basis:100%;font-size:.93rem;font-weight:500;color:var(--muted);margin-top:2px}
+.tag.ok{background:var(--teal-soft);color:var(--teal)}
+.tag.warn{background:var(--amber-soft);color:var(--amber)}
+.tag.high{background:var(--red-soft);color:var(--red)}
+.big-metric{display:flex;flex-wrap:wrap;align-items:flex-end;gap:8px 16px;margin:18px 0 4px}
+.big-num{font-size:clamp(2.6rem,9vw,3.4rem);font-weight:800;line-height:1;letter-spacing:-.02em}
+.big-unit{font-size:1.1rem;font-weight:700;color:var(--muted);padding-bottom:6px}
+.big-sub{font-size:1rem;font-weight:700;color:var(--muted);padding-bottom:8px}
+.tips{margin:16px 0 0;padding:0 0 0 4px;list-style:none}
+.tips li{position:relative;padding-left:30px;margin-bottom:12px}
+.tips li:before{content:"";position:absolute;left:6px;top:.62em;width:9px;height:9px;border-radius:50%;background:var(--navy)}
+.footnote{font-size:.9rem;color:var(--muted);margin:14px 0 0;border-top:1px solid #e2e8f1;padding-top:12px}
+.notice{margin:16px 0 0;padding:14px 16px;border-radius:10px;font-size:.98rem;font-weight:600}
+.notice.blue{background:var(--blue-soft);border-left:5px solid var(--navy)}
+.notice.red{background:var(--red-soft);border-left:5px solid var(--red);color:#6d1611}
+.error{margin:20px 0 0;padding:14px 16px;border-radius:10px;background:var(--red-soft);border-left:5px solid var(--red);font-weight:700;color:#6d1611}
+.result-actions{display:flex;flex-wrap:wrap;gap:10px;margin:18px 0 0}
+
+/* bmi scale */
+.scale{margin:22px 0 6px;padding-top:30px}
+.scale-bar{position:relative;height:20px;border-radius:10px;overflow:hidden;display:flex;border:1px solid #b9c6d8}
+.scale-bar span{display:block;height:100%}
+.z1{width:10.4167%;background:#c3cfdd}
+.z2{width:27.0833%;background:#5fb894}
+.z3{width:20.8333%;background:#e8b463}
+.z4{width:41.6666%;background:#d9837b}
+.scale-marker{position:absolute;top:0;width:4px;height:20px;background:var(--ink);border-radius:2px;transform:translateX(-50%)}
+.scale-cap{position:relative;height:28px;margin-top:6px}
+.scale-cap span{position:absolute;top:0;font-size:.82rem;color:var(--muted);font-weight:700;transform:translateX(-50%);white-space:nowrap}
+.scale-cap span:first-child{transform:none}
+.scale-cap span:last-child{transform:translateX(-100%)}
+
+/* mini cards */
+.mini-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0 0}
+.mini{border:2px solid var(--line);border-radius:12px;padding:16px;background:#fbfdff}
+.mini .cap{font-size:.86rem;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);margin:0 0 6px}
+.mini .num{font-size:1.9rem;font-weight:800;line-height:1.1;margin:0 0 6px}
+.mini p{margin:0;font-size:.95rem;color:var(--muted)}
+
+/* table */
+.table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:0 0 6px}
+table{border-collapse:collapse;width:100%;font-size:1rem;background:#fff}
+th,td{padding:13px 14px;text-align:left;border-bottom:1px solid #dfe6ef;vertical-align:top}
+th{background:#eef3f9;font-size:.92rem;letter-spacing:.02em;text-transform:uppercase;color:#2c405c}
+td strong{white-space:nowrap}
+.td-ok{color:var(--teal);font-weight:800}
+.td-warn{color:var(--amber);font-weight:800}
+.td-high{color:var(--red);font-weight:800}
+
+/* reading */
+.reading{list-style:none;margin:0;padding:0}
+.reading li{border:1px solid var(--line);border-radius:12px;padding:16px;margin-bottom:12px;background:#fff}
+.reading a{font-weight:800;font-size:1.1rem;text-decoration:none}
+.reading a:hover{text-decoration:underline}
+.reading p{margin:6px 0 0;color:var(--muted);font-size:.95rem}
+
+details{border:1px solid var(--line);border-radius:12px;background:#fff;padding:0;margin:0 0 12px}
+details summary{cursor:pointer;font-weight:800;font-size:1.05rem;padding:16px 18px;min-height:56px;display:flex;align-items:center;gap:10px;list-style:none}
+details summary::-webkit-details-marker{display:none}
+details summary:before{content:"+";font-weight:800;color:var(--navy);width:18px;display:inline-block;font-size:1.3rem;line-height:1}
+details[open] summary:before{content:"–"}
+details .body{padding:0 18px 18px;color:#22344c}
+details .body p{margin:0 0 10px}
+
+.disclaimer{border:2px dashed #b3c2d6;background:#fbfcfe;border-radius:var(--radius);padding:20px;margin:0 0 20px}
+.disclaimer h2{font-size:1.16rem;margin-bottom:8px}
+.disclaimer p{margin:0 0 10px;font-size:.98rem;color:#22344c}
+.disclaimer p:last-child{margin-bottom:0}
+
+.site-foot{background:#0d2136;color:#c6d6e8;padding:26px 0 34px;margin-top:10px;font-size:.92rem}
+.site-foot a{color:#9fc8f0}
+.site-foot p{margin:0 0 8px}
+
+@media (min-width:720px){
+  .card{padding:28px}
+  .mini-grid{gap:18px}
+}
+@media (max-width:520px){
+  html{font-size:17px}
+  .tabs{grid-template-columns:1fr;margin-top:-26px}
+  .tab{min-height:60px;flex-direction:row;gap:8px;padding:14px}
+  .tab small{display:none}
+  .mini-grid{grid-template-columns:1fr}
+  .metrics li{flex-direction:column;align-items:flex-start}
+  .metrics .v{text-align:left}
+  .seg{padding:12px 14px;font-size:.95rem}
+  .card{padding:18px}
+}
+@media print{
+  body{background:#fff}
+  .tabs,.btn-primary,.btn-ghost,.result-actions,.site-head{background:#fff;color:#000}
+  .tabs,.no-print{display:none!important}
+  .card,.result-card{box-shadow:none;page-break-inside:avoid}
+  a{color:#000;text-decoration:underline}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to the calculators</a>
+
+<header class="site-head">
+  <div class="wrap">
+    <p class="brand"><span class="dot" aria-hidden="true"></span>Daily Longevity Tools</p>
+    <h1>Senior Health &amp; Blood Sugar Calculator</h1>
+    <p class="sub">Two quick checks for adults over 50. Type the numbers you already have and get a plain-English answer — large type, no sign-in, and nothing leaves this page.</p>
+  </div>
+</header>
+
+<main id="main" class="wrap">
+
+  <div class="tabs" role="tablist" aria-label="Choose a calculator">
+    <button class="tab" id="tab-glucose" role="tab" aria-selected="true" aria-controls="panel-glucose" type="button">
+      Blood Sugar &amp; A1C<small>Fasting · 2 hours after a meal</small>
+    </button>
+    <button class="tab" id="tab-body" role="tab" aria-selected="false" aria-controls="panel-body" type="button" tabindex="-1">
+      BMI, Water &amp; Protein<small>For your height, weight and age</small>
+    </button>
+  </div>
+
+  <!-- ============ PANEL 1: BLOOD SUGAR ============ -->
+  <section class="card" id="panel-glucose" role="tabpanel" aria-labelledby="tab-glucose" tabindex="0">
+    <h2>Blood Sugar &amp; Estimated A1C Check</h2>
+    <p class="panel-lede">Use the numbers from your glucose meter, or from your last lab report. One reading is enough to start; both give a better estimate.</p>
+
+    <form id="sugar-form" novalidate>
+      <span class="group-label" id="sugar-unit-label">Units on your meter</span>
+      <div class="seg-group" role="group" aria-labelledby="sugar-unit-label">
+        <button type="button" class="seg" data-sugar-unit="mgdl" aria-pressed="true">mg/dL</button>
+        <button type="button" class="seg" data-sugar-unit="mmol" aria-pressed="false">mmol/L</button>
+      </div>
+
+      <div class="field">
+        <label for="fasting">Fasting blood sugar <span class="hint">Nothing to eat or drink but water for 8 hours</span></label>
+        <div class="input-row">
+          <input id="fasting" name="fasting" type="number" inputmode="decimal" step="any" placeholder="e.g. 105" aria-describedby="fasting-help">
+          <span class="unit-label" id="fasting-unit">mg/dL</span>
+        </div>
+        <p class="help" id="fasting-help">Normal: under 100 mg/dL (5.6 mmol/L).</p>
+      </div>
+
+      <div class="field">
+        <label for="postmeal">2 hours after a meal <span class="hint">Counted from the first bite, not the last</span></label>
+        <div class="input-row">
+          <input id="postmeal" name="postmeal" type="number" inputmode="decimal" step="any" placeholder="e.g. 148" aria-describedby="postmeal-help">
+          <span class="unit-label" id="postmeal-unit">mg/dL</span>
+        </div>
+        <p class="help" id="postmeal-help">Normal: under 140 mg/dL (7.8 mmol/L).</p>
+      </div>
+
+      <button type="submit" class="btn btn-primary" id="btn-sugar">Check my numbers</button>
+      <p class="privacy-note">Everything is calculated inside this page. Nothing is stored or sent to a server.</p>
+    </form>
+
+    <div id="sugar-result" class="results" aria-live="polite"></div>
+
+    <h3>Blood sugar ranges at a glance</h3>
+    <div class="table-wrap">
+      <table>
+        <caption class="visually-hidden" style="position:absolute;left:-9999px">Screening ranges for fasting glucose, 2-hour post-meal glucose and A1C</caption>
+        <thead>
+          <tr><th scope="col">Test</th><th scope="col">Normal</th><th scope="col">Prediabetes</th><th scope="col">Diabetes range</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">Fasting</th>
+            <td class="td-ok">under 100 mg/dL<br>(under 5.6 mmol/L)</td>
+            <td class="td-warn">100–125 mg/dL<br>(5.6–6.9 mmol/L)</td>
+            <td class="td-high">126 mg/dL and up<br>(7.0 mmol/L and up)</td>
+          </tr>
+          <tr>
+            <th scope="row">2 hours after a meal</th>
+            <td class="td-ok">under 140 mg/dL<br>(under 7.8 mmol/L)</td>
+            <td class="td-warn">140–199 mg/dL<br>(7.8–11.0 mmol/L)</td>
+            <td class="td-high">200 mg/dL and up<br>(11.1 mmol/L and up)</td>
+          </tr>
+          <tr>
+            <th scope="row">A1C (lab test)</th>
+            <td class="td-ok">under 5.7%</td>
+            <td class="td-warn">5.7–6.4%</td>
+            <td class="td-high">6.5% and up</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="footnote">Screening cut-offs follow the American Diabetes Association. If you already have diabetes, your own targets may be different — many doctors aim a little higher after 65 on purpose.</p>
+  </section>
+
+  <!-- ============ PANEL 2: BMI / WATER / PROTEIN ============ -->
+  <section class="card" id="panel-body" role="tabpanel" aria-labelledby="tab-body" tabindex="0" hidden>
+    <h2>Senior BMI &amp; Daily Water / Protein Guide</h2>
+    <p class="panel-lede">BMI is a rough starting point. What matters more after 50 is how much muscle you carry and where your weight sits — so the answer below comes with both.</p>
+
+    <form id="body-form" novalidate>
+      <fieldset class="field">
+        <legend>Your age group</legend>
+        <div class="seg-group" role="group" aria-label="Age group">
+          <button type="button" class="seg" data-age-group="50" aria-pressed="false">50 to 64</button>
+          <button type="button" class="seg" data-age-group="65" aria-pressed="true">65 or older</button>
+        </div>
+      </fieldset>
+
+      <div class="field">
+        <label for="height">Your height</label>
+        <div class="split" style="margin-bottom:10px">
+          <div class="seg-group" style="margin:0" role="group" aria-label="Height units">
+            <button type="button" class="seg" data-height-unit="ftin" aria-pressed="true">ft / in</button>
+            <button type="button" class="seg" data-height-unit="cm" aria-pressed="false">cm</button>
+          </div>
+        </div>
+        <div class="split" id="height-ftin">
+          <input id="height-ft" type="number" inputmode="numeric" step="1" placeholder="5" aria-label="Height, feet" min="3" max="7">
+          <span class="unit-label">ft</span>
+          <input id="height-in" type="number" inputmode="numeric" step="1" placeholder="6" aria-label="Height, inches" min="0" max="11">
+          <span class="unit-label">in</span>
+        </div>
+        <div class="split" id="height-cm" hidden>
+          <input id="height-cm-input" type="number" inputmode="numeric" step="1" placeholder="168" aria-label="Height in centimeters" min="120" max="215">
+          <span class="unit-label">cm</span>
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="weight">Your weight</label>
+        <div class="split" style="margin-bottom:10px">
+          <div class="seg-group" style="margin:0" role="group" aria-label="Weight units">
+            <button type="button" class="seg" data-weight-unit="lb" aria-pressed="true">lbs</button>
+            <button type="button" class="seg" data-weight-unit="kg" aria-pressed="false">kg</button>
+          </div>
+        </div>
+        <div class="input-row">
+          <input id="weight" type="number" inputmode="decimal" step="any" placeholder="e.g. 165" aria-describedby="weight-help">
+          <span class="unit-label" id="weight-unit">lbs</span>
+        </div>
+        <p class="help" id="weight-help">Use your usual morning weight, without shoes.</p>
+      </div>
+
+      <button type="submit" class="btn btn-primary" id="btn-body">Calculate my numbers</button>
+      <p class="privacy-note">Everything is calculated inside this page. Nothing is stored or sent to a server.</p>
+    </form>
+
+    <div id="body-result" class="results" aria-live="polite"></div>
+
+    <h3>The BMI ranges we use</h3>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th scope="col">BMI</th><th scope="col">50 to 64</th><th scope="col">65 and older</th></tr>
+        </thead>
+        <tbody>
+          <tr><th scope="row">under 20</th><td>Underweight</td><td>Low — frailty risk</td></tr>
+          <tr><th scope="row">20 to 22.9</th><td>Healthy</td><td>A little below the comfort range</td></tr>
+          <tr><th scope="row">23 to 24.9</th><td>Healthy</td><td>Comfortable range</td></tr>
+          <tr><th scope="row">25 to 27</th><td>Overweight</td><td>Comfortable range</td></tr>
+          <tr><th scope="row">27 to 29.9</th><td>Overweight</td><td>Slightly above — often fine</td></tr>
+          <tr><th scope="row">30 and up</th><td>Obesity</td><td>High</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="footnote">Between 50 and 64 the standard adult cut-offs apply. From 65, a somewhat higher BMI is generally safer than a low one, because low weight raises the risk of falls, fractures and infection.</p>
+  </section>
+
+  <!-- ============ HOW WE CALCULATE ============ -->
+  <section class="card">
+    <h2>How these numbers are worked out</h2>
+    <details>
+      <summary>Estimated A1C from two readings</summary>
+      <div class="body">
+        <p>Your fasting and 2-hour readings are averaged 50/50 to approximate your average glucose through the day. That average is then converted with the formula used to link average glucose to A1C: <strong>A1C = (average glucose in mg/dL + 46.7) ÷ 28.7</strong>.</p>
+        <p>That formula was built for a real 3-month average from continuous monitoring, so treat our figure as a rough screen. A lab A1C is the standard and needs only one blood draw.</p>
+      </div>
+    </details>
+    <details>
+      <summary>BMI, water and protein</summary>
+      <div class="body">
+        <p><strong>BMI</strong> = 703 × weight in pounds ÷ (height in inches)².</p>
+        <p><strong>Water</strong> = about 30 ml per kg of body weight, kept between 1.5 and 3.3 liters a day, with roughly 20% coming from food.</p>
+        <p><strong>Protein</strong> = 1.0 to 1.2 g per kg a day, the range recommended for healthy older adults, using a weight at or below a BMI of 30 so that extra fat does not inflate the target.</p>
+      </div>
+    </details>
+    <details>
+      <summary>Why a single high reading is not a diagnosis</summary>
+      <div class="body">
+        <p>One reading can be pushed up by a poor night's sleep, an infection, a steroid, a late dinner, or stress. Diagnosis needs a repeat lab test on another day. What one reading should do is get you to a doctor with a question — not to a conclusion.</p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ FAQ ============ -->
+  <section class="card">
+    <h2>Common questions</h2>
+    <details>
+      <summary>What is a normal blood sugar for a 65-year-old?</summary>
+      <div class="body">
+        <p>For screening, the cut-offs are the same at 65 as at 45: fasting under 100 mg/dL (5.6 mmol/L), and under 140 mg/dL (7.8 mmol/L) two hours after a meal. A fasting reading of 100–125 or a 2-hour reading of 140–199 is the prediabetes range.</p>
+        <p>If you already have diabetes, your doctor may set a higher target on purpose — very low readings are more dangerous after 65 than slightly high ones.</p>
+      </div>
+    </details>
+    <details>
+      <summary>Can this calculator diagnose diabetes?</summary>
+      <div class="body">
+        <p>No. It sorts the numbers you type into the standard screening ranges and gives a rough A1C estimate. Diagnosis comes from a lab A1C, a fasting plasma glucose test, or an oral glucose tolerance test, usually repeated on a second day.</p>
+      </div>
+    </details>
+    <details>
+      <summary>What BMI should a senior have?</summary>
+      <div class="body">
+        <p>Between 50 and 64, the usual healthy range is 18.5 to 24.9. From 65 on, about 23 to 27 is often considered the most comfortable range. BMI cannot tell muscle from fat, so also check your waist and how easily you stand up from a chair.</p>
+      </div>
+    </details>
+    <details>
+      <summary>How much water does an older adult need?</summary>
+      <div class="body">
+        <p>Roughly 1.5 to 2 liters a day, about 6 to 8 cups, and part of it comes from food. Thirst weakens with age, so pale straw-colored urine is a better reminder than thirst. With heart failure, kidney disease or a diuretic, ask your doctor first.</p>
+      </div>
+    </details>
+    <details>
+      <summary>Why is my morning reading higher than my bedtime reading?</summary>
+      <div class="body">
+        <p>Between about 3 and 8 a.m. your liver releases stored glucose and cortisol rises to wake you up. This is the dawn phenomenon and it is normal. A late or heavy dinner, poor sleep and some medications add to it.</p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ RECOMMENDED READING ============ -->
+  <section class="card">
+    <h2>Recommended reading</h2>
+    <p class="panel-lede">Three practical guides from our sister site, written for the same age group.</p>
+    <ul class="reading">
+      <li>
+        <a href="https://en.seoulhangang.com/2026/11/morning-habits-to-keep-blood-sugar.html">Morning Habits to Keep Blood Sugar Steady After 50</a>
+        <p>Why the first two hours after waking decide your whole morning curve — and the small habits that flatten it.</p>
+      </li>
+      <li>
+        <a href="https://en.seoulhangang.com/2026/11/magnesium-and-evening-routines-for.html">Magnesium and Evening Routines for Deeper Sleep Over 50</a>
+        <p>What the evidence actually supports for the 2 a.m. wake-up, which form to buy, and an evening routine that helps.</p>
+      </li>
+      <li>
+        <a href="https://en.seoulhangang.com/2026/11/gentle-daily-exercises-to-protect-knee.html">Gentle Daily Exercises to Protect Knee Joints as You Age</a>
+        <p>Six exercises that need only a chair and a wall, and how much discomfort is still safe.</p>
+      </li>
+    </ul>
+  </section>
+
+  <!-- ============ DISCLAIMER ============ -->
+  <section class="disclaimer" aria-labelledby="disclaimer-title">
+    <h2 id="disclaimer-title">Please read this</h2>
+    <p>This page is for <strong>educational purposes only</strong>. It is not medical advice, and it does not diagnose or treat any condition. The results are estimates built from the numbers you type in.</p>
+    <p>Always consult your doctor or another qualified health professional about your own numbers, medicines, and targets — especially before changing what you eat, drink, or take. If you have chest pain, trouble breathing, confusion, or a reading under 70 mg/dL that will not come up, get emergency help right away.</p>
+    <p><strong>Privacy.</strong> This page never asks for your name, email or phone number, and the numbers you type are not sent anywhere — the calculation happens inside your browser and nothing is stored or shared. The page displays Google ads, and Google may use cookies to choose them. You can review or switch off personalised advertising at <a href="https://myadcenter.google.com/" rel="noopener" target="_blank">Google My Ad Center</a>.</p>
+  </section>
+
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <p><strong>Daily Longevity Tools</strong> — practical, plain-English health tools for adults over 50.</p>
+    <p>Last updated: November 25, 2026.</p>
+    <p><a href="/privacy.html">Privacy Policy</a> &middot; <a href="https://en.seoulhangang.com/">More tools from seoulhangang.com</a></p>
+    <p>Part of the <a href="https://en.seoulhangang.com/">seoulhangang.com</a> network. &copy; 2026 Daily Longevity Tools. All rights reserved.</p>
+  </div>
+</footer>
+
+<!-- ================= CALC MATH (pure, no DOM) START ================= -->
+<script>
+var CalcMath = (function () {
+  var MG_PER_MMOL = 18.0182;
+
+  function toMgdl(value, unit) {
+    return unit === 'mmol' ? value * MG_PER_MMOL : value;
+  }
+  function toMmol(mg) {
+    return mg / MG_PER_MMOL;
+  }
+  function round1(x) {
+    return Math.round(x * 10) / 10;
+  }
+  function roundTo(x, step) {
+    return Math.round(x / step) * step;
+  }
+
+  /* ---- blood sugar ---- */
+  function classifyFasting(mg) {
+    if (mg < 70) return 'low';
+    if (mg < 100) return 'normal';
+    if (mg < 126) return 'prediabetes';
+    return 'high';
+  }
+  function classifyPost(mg) {
+    if (mg < 70) return 'low';
+    if (mg < 140) return 'normal';
+    if (mg < 200) return 'prediabetes';
+    return 'high';
+  }
+  function classifyA1C(a1c) {
+    if (a1c < 5.7) return 'normal';
+    if (a1c < 6.5) return 'prediabetes';
+    return 'high';
+  }
+  /* eAG from A1C (ADAG): eAG = 28.7 * A1C - 46.7 */
+  function a1cFromAverageGlucose(eagMg) {
+    return (eagMg + 46.7) / 28.7;
+  }
+  function estimateA1C(fastingMg, postMg) {
+    var hasF = typeof fastingMg === 'number' && isFinite(fastingMg);
+    var hasP = typeof postMg === 'number' && isFinite(postMg);
+    var eag;
+    if (hasF && hasP) eag = 0.5 * fastingMg + 0.5 * postMg;
+    else if (hasF) eag = fastingMg;
+    else if (hasP) eag = postMg;
+    else return null;
+    var a1c = a1cFromAverageGlucose(eag);
+    return {
+      eagMg: eag,
+      eagMmol: toMmol(eag),
+      a1c: a1c,
+      bothReadings: hasF && hasP
+    };
+  }
+  function worstOf() {
+    var order = { normal: 0, prediabetes: 1, high: 2 };
+    var worst = 'normal';
+    for (var i = 0; i < arguments.length; i++) {
+      var c = arguments[i];
+      if (c === 'low') return 'low';
+      if (order[c] > order[worst]) worst = c;
+    }
+    return worst;
+  }
+
+  /* ---- body ---- */
+  function bmiFromLbIn(lb, inch) {
+    return 703 * lb / (inch * inch);
+  }
+  function bmiCategory(bmi, older) {
+    if (older) {
+      if (bmi < 20) return 'low';
+      if (bmi < 23) return 'lowish';
+      if (bmi < 27) return 'normal';
+      if (bmi < 30) return 'slightly-high';
+      return 'high';
+    }
+    if (bmi < 18.5) return 'low';
+    if (bmi < 25) return 'normal';
+    if (bmi < 30) return 'slightly-high';
+    return 'high';
+  }
+  function comfortableWeightLb(inch, older) {
+    var lo = older ? 23 : 18.5;
+    var hi = older ? 27 : 24.9;
+    return { loLb: lo * inch * inch / 703, hiLb: hi * inch * inch / 703 };
+  }
+  function fluidMlPerDay(kg) {
+    return Math.min(3300, Math.max(1500, kg * 30));
+  }
+  function proteinTarget(kg, bmi, inch) {
+    var baseKg = kg;
+    if (bmi > 30 && inch > 0) {
+      /* weight at BMI 30 for the same height */
+      baseKg = 30 * inch * inch / 703 / 2.20462;
+    }
+    return {
+      loG: roundTo(1.0 * baseKg, 5),
+      hiG: roundTo(1.2 * baseKg, 5),
+      baseKg: baseKg
+    };
+  }
+  function lbToKg(lb) { return lb / 2.20462; }
+  function kgToLb(kg) { return kg * 2.20462; }
+  function inchToCm(inch) { return inch * 2.54; }
+  function cmToInch(cm) { return cm / 2.54; }
+
+  return {
+    MG_PER_MMOL: MG_PER_MMOL,
+    toMgdl: toMgdl,
+    toMmol: toMmol,
+    round1: round1,
+    classifyFasting: classifyFasting,
+    classifyPost: classifyPost,
+    classifyA1C: classifyA1C,
+    a1cFromAverageGlucose: a1cFromAverageGlucose,
+    estimateA1C: estimateA1C,
+    worstOf: worstOf,
+    bmiFromLbIn: bmiFromLbIn,
+    bmiCategory: bmiCategory,
+    comfortableWeightLb: comfortableWeightLb,
+    fluidMlPerDay: fluidMlPerDay,
+    proteinTarget: proteinTarget,
+    lbToKg: lbToKg,
+    kgToLb: kgToLb,
+    inchToCm: inchToCm,
+    cmToInch: cmToInch
+  };
+})();
+</script>
+<!-- ================= CALC MATH END ================= -->
+
+<!-- ================= UI (DOM) ================= -->
+<script>
+(function () {
+  var M = window.CalcMath;
+  var $ = function (id) { return document.getElementById(id); };
+
+  /* ---------------- tabs ---------------- */
+  var tabs = [$('tab-glucose'), $('tab-body')];
+  var panels = [$('panel-glucose'), $('panel-body')];
+  function selectTab(index) {
+    tabs.forEach(function (t, i) {
+      var on = i === index;
+      t.setAttribute('aria-selected', on ? 'true' : 'false');
+      t.tabIndex = on ? 0 : -1;
+      panels[i].hidden = !on;
+    });
+  }
+  tabs.forEach(function (t, i) {
+    t.addEventListener('click', function () { selectTab(i); });
+    t.addEventListener('keydown', function (e) {
+      if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') {
+        e.preventDefault();
+        var dir = e.key === 'ArrowRight' ? 1 : -1;
+        var next = (i + dir + tabs.length) % tabs.length;
+        selectTab(next);
+        tabs[next].focus();
+      }
+    });
+  });
+
+  /* ---------------- state ---------------- */
+  var sugarUnit = 'mgdl';
+  var heightUnit = 'ftin';
+  var weightUnit = 'lb';
+  var ageGroup = '65';
+
+  function readNum(id) {
+    var raw = $(id).value.trim();
+    if (raw === '') return null;
+    var v = Number(raw);
+    return isFinite(v) ? v : NaN;
+  }
+  function num(v, digits) {
+    return Number(v).toLocaleString('en-US', {
+      minimumFractionDigits: digits || 0,
+      maximumFractionDigits: digits || 0
+    });
+  }
+
+  /* ---------------- blood sugar ---------------- */
+  function gv(mg) { /* display a mg/dL threshold in the chosen unit */
+    return sugarUnit === 'mmol' ? num(mg / M.MG_PER_MMOL, 1) : num(mg, 0);
+  }
+  function gunit() { return sugarUnit === 'mmol' ? 'mmol/L' : 'mg/dL'; }
+  function currentGlucose(mg) { /* display an entered value */
+    return sugarUnit === 'mmol' ? num(M.toMmol(mg), 1) : num(mg, 0);
+  }
+
+  function setSugarUnit(unit) {
+    if (unit === sugarUnit) return;
+    var f = readNum('fasting');
+    var p = readNum('postmeal');
+    var fromUnit = sugarUnit;
+    var toUnit = function (v) {
+      if (v === null || isNaN(v)) return '';
+      var mg = fromUnit === 'mmol' ? v * M.MG_PER_MMOL : v;
+      return unit === 'mmol' ? String(M.round1(mg / M.MG_PER_MMOL)) : String(Math.round(mg));
+    };
+    var fOut = toUnit(f);
+    var pOut = toUnit(p);
+    sugarUnit = unit;
+    $('fasting').value = fOut;
+    $('postmeal').value = pOut;
+    document.querySelectorAll('[data-sugar-unit]').forEach(function (b) {
+      b.setAttribute('aria-pressed', b.getAttribute('data-sugar-unit') === unit ? 'true' : 'false');
+    });
+    $('fasting-unit').textContent = gunit();
+    $('postmeal-unit').textContent = gunit();
+    $('fasting').placeholder = unit === 'mmol' ? 'e.g. 5.8' : 'e.g. 105';
+    $('postmeal').placeholder = unit === 'mmol' ? 'e.g. 8.2' : 'e.g. 148';
+    $('fasting-help').textContent = 'Normal: under ' + gv(100) + ' ' + gunit() + '.';
+    $('postmeal-help').textContent = 'Normal: under ' + gv(140) + ' ' + gunit() + '.';
+    if ($('sugar-result').innerHTML !== '') renderSugar();
+  }
+  document.querySelectorAll('[data-sugar-unit]').forEach(function (b) {
+    b.addEventListener('click', function () { setSugarUnit(b.getAttribute('data-sugar-unit')); });
+  });
+
+  var SUGAR_TEXT = {
+    normal: {
+      tone: 'ok',
+      badge: 'In the normal range',
+      lead: 'Your numbers are where they should be for an adult over 50. Keep doing what you are doing.'
+    },
+    prediabetes: {
+      tone: 'warn',
+      badge: 'Prediabetes range',
+      lead: 'One of your numbers is above normal but not yet in the diabetes range. This is the stage where small changes work best — and often reverse it.'
+    },
+    high: {
+      tone: 'high',
+      badge: 'High — diabetes range',
+      lead: 'At least one number is in the diabetes range. A single reading does not diagnose diabetes, but it does need a doctor\u2019s check.'
+    },
+    low: {
+      tone: 'high',
+      badge: 'Low blood sugar',
+      lead: 'A reading under 70 mg/dL (3.9 mmol/L) is low, and that needs handling now rather than later.'
+    }
+  };
+
+  var TIPS = {
+    normal: [
+      'Keep the routine you already have. After 50, a fasting glucose and an A1C once a year is usually enough.',
+      'Muscle is your biggest glucose sponge. Two short strength sessions a week keep it working for you.',
+      'A 10-minute walk after your largest meal lowers the after-meal rise more than the same walk at another time of day.'
+    ],
+    prediabetes: [
+      'Walk for 15 to 20 minutes after dinner. Working muscle pulls glucose out of the blood without needing extra insulin.',
+      'Eat the protein and vegetables on your plate before the bread, rice or potatoes. Same meal, flatter curve.',
+      'Losing 5 to 7% of your body weight — about 8 to 14 lb for most people — cuts the chance of developing diabetes by more than half.',
+      'Ask your doctor for an A1C test if you have not had one in the past year. It shows three months, not one morning.'
+    ],
+    high: [
+      'Book a regular doctor\u2019s appointment in the next week or two to confirm with an A1C test — not an emergency visit.',
+      'If you are unusually thirsty, urinating often, seeing blurry, or losing weight without trying, call the doctor today.',
+      'Do not skip meals or cut your own medication to force the number down. That can cause a dangerous low.',
+      'Write down your morning and after-meal numbers for two weeks. It makes the doctor\u2019s decision far easier.'
+    ],
+    low: [
+      'Treat it now: 15 grams of fast sugar — half a cup of juice, 3 to 4 glucose tablets, or a tablespoon of sugar — then recheck in 15 minutes.',
+      'If you take insulin or a sulfonylurea, a low reading is a reason to talk to your doctor about the dose.',
+      'Do not drive until the reading is back above 70 mg/dL and you feel steady.'
+    ]
+  };
+
+  function rangeLabel(kind, cat) {
+    if (cat === 'low') return 'under ' + gv(70) + ' ' + gunit();
+    if (kind === 'fasting') {
+      if (cat === 'normal') return 'under ' + gv(100) + ' ' + gunit();
+      if (cat === 'prediabetes') return gv(100) + '\u2013' + gv(125) + ' ' + gunit();
+      return gv(126) + ' ' + gunit() + ' and up';
+    }
+    if (cat === 'normal') return 'under ' + gv(140) + ' ' + gunit();
+    if (cat === 'prediabetes') return gv(140) + '\u2013' + gv(199) + ' ' + gunit();
+    return gv(200) + ' ' + gunit() + ' and up';
+  }
+  var CAT_LABEL = {
+    normal: 'Normal',
+    prediabetes: 'Prediabetes',
+    high: 'High',
+    low: 'Low'
+  };
+  function tagFor(cat) {
+    return cat === 'normal' ? 'ok' : cat === 'prediabetes' ? 'warn' : 'high';
+  }
+  function noteLine(kind, cat) {
+    if (cat === 'low') return 'A reading under ' + gv(70) + ' ' + gunit() + ' is low \u2014 treat it now.';
+    if (cat === 'normal') return 'Normal is ' + rangeLabel(kind, 'normal') + ' \u2014 your reading is inside it.';
+    return 'Normal is ' + rangeLabel(kind, 'normal') + '. Yours sits in the ' + CAT_LABEL[cat].toLowerCase() +
+      ' band (' + rangeLabel(kind, cat) + ').';
+  }
+
+  function renderSugar() {
+    var out = $('sugar-result');
+    var fRaw = readNum('fasting');
+    var pRaw = readNum('postmeal');
+    var maxVal = sugarUnit === 'mmol' ? 33.3 : 600;
+    var minVal = sugarUnit === 'mmol' ? 1.1 : 20;
+
+    function bad(v) { return v !== null && (isNaN(v) || v < minVal || v > maxVal); }
+
+    if (fRaw === null && pRaw === null) {
+      out.innerHTML = '<p class="error">Please enter at least one number — fasting, 2 hours after a meal, or both.</p>';
+      return;
+    }
+    if (bad(fRaw) || bad(pRaw)) {
+      out.innerHTML = '<p class="error">That does not look like a blood sugar reading. Please check the number and whether your meter shows ' + gunit() + '.</p>';
+      return;
+    }
+
+    var fMg = fRaw === null ? null : M.toMgdl(fRaw, sugarUnit === 'mmol' ? 'mmol' : 'mgdl');
+    var pMg = pRaw === null ? null : M.toMgdl(pRaw, sugarUnit === 'mmol' ? 'mmol' : 'mgdl');
+
+    var fCat = fMg === null ? null : M.classifyFasting(fMg);
+    var pCat = pMg === null ? null : M.classifyPost(pMg);
+    var est = M.estimateA1C(fMg, pMg);
+    var aCat = est ? M.classifyA1C(est.a1c) : null;
+    var overall = M.worstOf(fCat || 'normal', pCat || 'normal', aCat || 'normal');
+
+    var text = SUGAR_TEXT[overall];
+    var a1cShown = Math.round(est.a1c * 10) / 10;
+    if (a1cShown > 14) a1cShown = 14;
+
+    var rows = '';
+    if (fMg !== null) {
+      rows += '<li><span class="k">Fasting</span>' +
+        '<span class="v">' + currentGlucose(fMg) + ' ' + gunit() +
+        ' <span class="tag ' + tagFor(fCat) + '">' + CAT_LABEL[fCat] + '</span></span>' +
+        '<span class="note-line">' + noteLine('fasting', fCat) + '</span></li>';
+    }
+    if (pMg !== null) {
+      rows += '<li><span class="k">2 hours after a meal</span>' +
+        '<span class="v">' + currentGlucose(pMg) + ' ' + gunit() +
+        ' <span class="tag ' + tagFor(pCat) + '">' + CAT_LABEL[pCat] + '</span></span>' +
+        '<span class="note-line">' + noteLine('post', pCat) + '</span></li>';
+    }
+    if (!est.bothReadings) {
+      rows += '<li><span class="k">One reading only</span>' +
+        '<span class="note-line" style="flex-basis:auto">The A1C estimate is rougher with one number. Add the other reading for a better estimate.</span></li>';
+    }
+
+    var a1cWord = aCat === 'normal' ? 'below the prediabetes line (under 5.7%)' :
+      aCat === 'prediabetes' ? 'inside the prediabetes range (5.7–6.4%)' : 'inside the diabetes range (6.5% or higher)';
+
+    var tips = TIPS[overall].map(function (t) { return '<li>' + t + '</li>'; }).join('');
+
+    var extra = '';
+    if (overall === 'low') {
+      extra = '<div class="notice red"><strong>Low reading.</strong> If you feel shaky, sweaty or confused, treat it with fast sugar now. A reading this low that repeats is a conversation with your doctor about your medication.</div>';
+    } else if ((fMg !== null && fMg >= 250) || (pMg !== null && pMg >= 350)) {
+      extra = '<div class="notice red"><strong>Very high reading.</strong> If you also feel very thirsty, sick to your stomach, or drowsy, get medical help today rather than waiting for an appointment.</div>';
+    }
+
+    out.innerHTML =
+      '<div class="result-card tone-' + text.tone + '">' +
+        '<span class="badge">' + text.badge + '</span>' +
+        '<p class="result-lead">' + text.lead + '</p>' +
+        '<ul class="metrics">' + rows + '</ul>' +
+        '<div class="big-metric">' +
+          '<span class="big-num">' + a1cShown.toFixed(1) + '%</span>' +
+          '<span class="big-sub">estimated A1C</span>' +
+        '</div>' +
+        '<p class="help" style="font-size:1rem">That estimate sits ' + a1cWord + '. Estimated average glucose: ' +
+          (sugarUnit === 'mmol'
+            ? currentGlucose(est.eagMg) + ' mmol/L (' + num(est.eagMg, 0) + ' mg/dL)'
+            : num(est.eagMg, 0) + ' mg/dL (' + num(M.toMmol(est.eagMg), 1) + ' mmol/L)') + '.</p>' +
+        extra +
+        '<h3 style="font-size:1.1rem;margin:20px 0 10px">What to do this week</h3>' +
+        '<ul class="tips">' + tips + '</ul>' +
+        '<p class="footnote">This is a screening estimate, not a diagnosis. A fasting reading alone can be pushed up by a bad night\u2019s sleep, an infection or a late dinner. Confirm with your doctor and a lab A1C.</p>' +
+        '<div class="result-actions no-print"><button type="button" class="btn btn-ghost" onclick="window.print()">Print or save this result</button></div>' +
+      '</div>';
+    out.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  $('sugar-form').addEventListener('submit', function (e) {
+    e.preventDefault();
+    renderSugar();
+  });
+
+  /* ---------------- body ---------------- */
+  function setPressed(selectorAttr, value) {
+    document.querySelectorAll('[' + selectorAttr + ']').forEach(function (b) {
+      b.setAttribute('aria-pressed', b.getAttribute(selectorAttr) === value ? 'true' : 'false');
+    });
+  }
+
+  document.querySelectorAll('[data-age-group]').forEach(function (b) {
+    b.addEventListener('click', function () {
+      ageGroup = b.getAttribute('data-age-group');
+      setPressed('data-age-group', ageGroup);
+      if ($('body-result').innerHTML !== '') renderBody();
+    });
+  });
+
+  function currentHeightInch() {
+    if (heightUnit === 'cm') {
+      var cm = readNum('height-cm-input');
+      if (cm === null || isNaN(cm)) return null;
+      return M.cmToInch(cm);
+    }
+    var ft = readNum('height-ft');
+    var inch = readNum('height-in');
+    if (ft === null && inch === null) return null;
+    var f = ft === null ? 0 : ft;
+    var i = inch === null ? 0 : inch;
+    if (isNaN(f) || isNaN(i)) return NaN;
+    return f * 12 + i;
+  }
+
+  document.querySelectorAll('[data-height-unit]').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var unit = b.getAttribute('data-height-unit');
+      if (unit === heightUnit) return;
+      var inch = currentHeightInch();
+      heightUnit = unit;
+      setPressed('data-height-unit', unit);
+      $('height-ftin').hidden = unit !== 'ftin';
+      $('height-cm').hidden = unit !== 'cm';
+      if (inch !== null && !isNaN(inch)) {
+        if (unit === 'cm') {
+          $('height-cm-input').value = String(Math.round(M.inchToCm(inch)));
+        } else {
+          $('height-ft').value = String(Math.floor(inch / 12));
+          $('height-in').value = String(Math.round(inch % 12));
+        }
+      }
+      if ($('body-result').innerHTML !== '') renderBody();
+    });
+  });
+
+  document.querySelectorAll('[data-weight-unit]').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var unit = b.getAttribute('data-weight-unit');
+      if (unit === weightUnit) return;
+      var w = readNum('weight');
+      weightUnit = unit;
+      setPressed('data-weight-unit', unit);
+      $('weight-unit').textContent = unit;
+      $('weight').placeholder = unit === 'kg' ? 'e.g. 75' : 'e.g. 165';
+      if (w !== null && !isNaN(w)) {
+        $('weight').value = unit === 'kg' ? String(M.round1(M.lbToKg(w))) : String(Math.round(M.kgToLb(w)));
+      }
+      if ($('body-result').innerHTML !== '') renderBody();
+    });
+  });
+
+  var BMI_TEXT = {
+    low: {
+      tone: 'warn',
+      badge: 'Below the healthy range',
+      lead: 'Your BMI is low for your age. After 65 that matters: low weight raises the risk of falls, fractures and infection more than a few extra pounds does.'
+    },
+    lowish: {
+      tone: 'warn',
+      badge: 'A little below the comfort range',
+      lead: 'You are just under the range most geriatricians prefer after 65. That is not a problem on its own, but it is worth protecting your muscle.'
+    },
+    normal: {
+      tone: 'ok',
+      badge: 'In the comfortable range',
+      lead: 'This is the range that tends to go with fewer falls, better strength and steadier blood sugar at your age.'
+    },
+    'slightly-high': {
+      tone: 'warn',
+      badge: 'A little above the range',
+      lead: 'BMI alone does not tell the whole story. Where the weight sits and how much of it is muscle matter more — check your waist below.'
+    },
+    high: {
+      tone: 'high',
+      badge: 'Above the healthy range',
+      lead: 'At this level, blood pressure, blood sugar and knee pain usually improve measurably with a modest weight loss — 5 to 10% is enough to feel it.'
+    }
+  };
+
+  function renderBody() {
+    var out = $('body-result');
+    var inch = currentHeightInch();
+    var w = readNum('weight');
+    var older = ageGroup === '65';
+
+    if (inch === null && w === null) {
+      out.innerHTML = '<p class="error">Please enter your height and weight.</p>';
+      return;
+    }
+    if (inch === null) {
+      out.innerHTML = '<p class="error">Please enter your height.</p>';
+      return;
+    }
+    if (w === null) {
+      out.innerHTML = '<p class="error">Please enter your weight.</p>';
+      return;
+    }
+    if (isNaN(inch) || inch < 48 || inch > 84) {
+      out.innerHTML = '<p class="error">That height looks off. Please enter between 4 ft 0 in and 7 ft 0 in (122–213 cm).</p>';
+      return;
+    }
+    var lb = weightUnit === 'kg' ? M.kgToLb(w) : w;
+    if (isNaN(lb) || lb < 60 || lb > 500) {
+      out.innerHTML = '<p class="error">That weight looks off. Please enter between 60 and 500 lbs (27–227 kg).</p>';
+      return;
+    }
+
+    var kg = M.lbToKg(lb);
+    var bmi = M.bmiFromLbIn(lb, inch);
+    var bmiShown = M.round1(bmi);
+    var cat = M.bmiCategory(bmi, older);
+    var text = BMI_TEXT[cat];
+
+    var range = M.comfortableWeightLb(inch, older);
+    var rangeText = weightUnit === 'kg'
+      ? num(M.lbToKg(range.loLb), 0) + '–' + num(M.lbToKg(range.hiLb), 0) + ' kg'
+      : num(range.loLb, 0) + '–' + num(range.hiLb, 0) + ' lb';
+
+    var ml = M.fluidMlPerDay(kg);
+    var cups = Math.round(ml / 240);
+    var drinkCups = Math.max(4, Math.round(cups * 0.8));
+    var liters = M.round1(ml / 1000);
+
+    var prot = M.proteinTarget(kg, bmi, inch);
+    var protLo = prot.loG, protHi = prot.hiG;
+    if (protHi - protLo < 5) protHi = protLo + 5;
+
+    var pct = ((bmi - 16) / 24) * 100;
+    if (pct < 0) pct = 0;
+    if (pct > 100) pct = 100;
+
+    var tips;
+    if (older) {
+      tips = [
+        'After 65 a little extra weight is often safer than being thin. The risk to watch is losing muscle, not the number on the scale.',
+        'Check your waist as well: over 40 inches for men or 35 inches for women means more fat around the organs, whatever the BMI says.',
+        'Put 25 to 30 g of protein on each plate, and add two short strength sessions a week — chair sit-to-stands and a resistance band are enough.',
+        'If you have lost weight without trying in the last six months, tell your doctor. That matters more than any BMI number.'
+      ];
+    } else {
+      tips = [
+        'Staying under a BMI of 25 keeps blood pressure, blood sugar and knee pain easier to manage through your sixties.',
+        'Losing 5 to 10% of your weight improves blood sugar, sleep apnea and joint pain measurably — you do not need to reach a "goal weight" to get the benefit.',
+        'Build muscle while you lose fat: two strength sessions a week protect the tissue that uses glucose.',
+        'Waist size counts as much as BMI — over 40 inches for men or 35 inches for women is the line to watch.'
+      ];
+    }
+    var tipsHtml = tips.map(function (t) { return '<li>' + t + '</li>'; }).join('');
+
+    var weightWord = weightUnit === 'kg' ? 'kg' : 'lb';
+    var dietaryNote = '<div class="notice blue">If you have heart failure, kidney disease, or take a water pill (diuretic), ask your doctor before changing how much you drink or how much protein you eat.</div>';
+
+    out.innerHTML =
+      '<div class="result-card tone-' + text.tone + '">' +
+        '<span class="badge">' + text.badge + '</span>' +
+        '<p class="result-lead">' + text.lead + '</p>' +
+        '<div class="big-metric">' +
+          '<span class="big-num">' + bmiShown.toFixed(1) + '</span>' +
+          '<span class="big-sub">BMI</span>' +
+        '</div>' +
+        '<div class="scale" aria-hidden="true">' +
+          '<div class="scale-bar">' +
+            '<span class="z1"></span><span class="z2"></span><span class="z3"></span><span class="z4"></span>' +
+            '<i class="scale-marker" style="left:' + pct.toFixed(2) + '%"></i>' +
+          '</div>' +
+          '<div class="scale-cap">' +
+            '<span style="left:0">16</span><span style="left:10.42%">18.5</span><span style="left:37.5%">25</span><span style="left:58.33%">30</span><span style="left:100%">40</span>' +
+          '</div>' +
+        '</div>' +
+        '<p class="help">' + (older ? 'Comfortable weight for your height (BMI 23–27): ' : 'Healthy weight for your height (BMI 18.5–24.9): ') +
+          '<strong style="color:#101f33">' + rangeText + '</strong>. You entered ' + num(weightUnit === 'kg' ? kg : lb, 0) + ' ' + weightWord + '.</p>' +
+
+        '<div class="mini-grid">' +
+          '<div class="mini">' +
+            '<p class="cap">Water each day</p>' +
+            '<p class="num">' + cups + ' cups</p>' +
+            '<p>About ' + liters.toFixed(1) + ' L in total, including what is in food. Aim to actually drink around ' + drinkCups + ' cups of water, tea or coffee. Pale straw-colored urine means you are on track.</p>' +
+          '</div>' +
+          '<div class="mini">' +
+            '<p class="cap">Protein each day</p>' +
+            '<p class="num">' + protLo + '–' + protHi + ' g</p>' +
+            '<p>Roughly 25–30 g per meal: a palm-sized piece of fish or chicken, two eggs with Greek yogurt, tofu, or beans. Spread it out — your body uses it better that way.</p>' +
+          '</div>' +
+        '</div>' +
+
+        dietaryNote +
+        '<h3 style="font-size:1.1rem;margin:22px 0 10px">What matters more than the number</h3>' +
+        '<ul class="tips">' + tipsHtml + '</ul>' +
+        '<p class="footnote">BMI is a screening tool, not a diagnosis. It cannot tell muscle from fat, and it reads high for very muscular people and low for people who have lost muscle. Bring these numbers to your doctor rather than acting on them alone.</p>' +
+        '<div class="result-actions no-print"><button type="button" class="btn btn-ghost" onclick="window.print()">Print or save this result</button></div>' +
+      '</div>';
+    out.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  $('body-form').addEventListener('submit', function (e) {
+    e.preventDefault();
+    renderBody();
+  });
+
+  /* sensible starting point for a first visit */
+  $('height-ft').value = '';
+  $('height-in').value = '';
+})();
+</script>
+</body>
+</html>
